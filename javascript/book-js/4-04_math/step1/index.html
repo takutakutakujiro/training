@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>テンプレート</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+
+	<p>円周率は
+		<span><script>document.write(Math.PI);</script></span>
+		です。
+	</p>
+	<p>普通に切り捨てると
+		<span><script>document.write(Math.floor(Math.PI));</script></span>
+		です。
+	</p>
+	<p>小数点第２位以降切り捨ての場合は
+		<span id="output"></span>
+	</p>
+
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+
+var stringPI = String(Math.PI);
+var targetIndex = stringPI.indexOf('.');
+console.log('targetIndex: ' + targetIndex);
+
+var output = stringPI.substr(0, targetIndex + 3);
+
+document.getElementById('output').textContent = output;
+
+</script>
+</body>
+</html>

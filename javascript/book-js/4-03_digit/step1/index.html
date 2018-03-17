@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>テンプレート</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+
+<form action="#" id="form">
+	<input type="text" name="keta" value="3">
+	<input type="text" name="maxVal" value="100">
+	<input type="submit" value="検索">
+</form>
+
+<div id="list"></div>
+	
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+
+document.getElementById('form').onsubmit = 
+	function(){
+		var keta = parseInt(document.getElementById('form').keta.value);
+		var maxVal = parseInt(document.getElementById('form').maxVal.value);
+		
+		console.log('桁数：' + keta);
+		console.log('最大値：' + maxVal);
+
+		for(var i = 0; i < song.length; i++){
+			var paragraph = document.createElement('p');
+			paragraph.textContent = (addZero(2, i) + '. ' + song[i]);
+			document.getElementById('list').appendChild(paragraph);
+		}
+		return false;
+	}
+
+var addZero = function(keta, nowVal){
+	var val = String(nowVal);
+	while(val.length < keta){
+		val = '0' + val;
+	}
+	return val;
+}
+
+var song =[
+	'A',
+	'B',
+	'C',
+	'D',
+	'E',
+	'F',
+	'G',
+	'H',
+	'I',
+	'J',
+	'K',
+];
+
+</script>
+</body>
+</html>

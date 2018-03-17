@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>template</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>タイトル</h1>
+<h2>サブタイトル</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+<p id="choise"></p>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+var fizzbuzz = function(maxNum){
+	var message;
+	for(var i = 1; i <= maxNum; i++) {
+		if (i % 15 === 0){
+			message = 'Fizz Buzz'
+		} else if (i % 3 === 0){
+			message = 'Fizz';
+		} else if (i % 5 === 0){
+			message = 'Buzz';
+		} else {
+			message = i;
+		}
+		console.log(message);
+	}
+}
+fizzbuzz(100);
+</script>
+</body>
+</html>

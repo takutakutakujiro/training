@@ -1,0 +1,45 @@
+	
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>jQuery TIPS</title>
+</head>
+<body>
+<form>
+  <div>
+    <label for="keyword">キーワード：</label>
+    <input id="keyword" type="text" size="20" />
+    <input id="search" type="button" value="検索" />
+  </div>
+  <ul id="result" class="ajax"></ul>
+</form>
+<p id="sampleOutput"></p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(function() {
+  // ［検索］ボタンクリックで検索開始
+  $('#search').click(function() {
+    // .phpファイルへのアクセス
+    $.ajax(//'ajax.php',
+    {
+      type: 'POST',
+      data: {"query" : $('#keyword').val()},
+      //dataType: 'jsonp'
+      url: 'ajax.php'
+    })
+    .done(function(data, dataType) {
+      if(data == "1"){
+        alert("OK")
+        // jQuery( function(){
+        //   jQueryQuery('#sampleOutput').text('Hello World!');
+        // });
+      } else {
+        alert(data);
+      };
+    });
+  });
+});
+</script>
+</body>
+</html>
